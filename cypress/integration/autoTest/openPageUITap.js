@@ -6,15 +6,15 @@ context('Проверка открытия стартовой страницы �
         mockRequests()
             })
 // Проверка открытия стартовой страницы
-        it('OpenStartPage', () =>{
-        cy.visit('/')
+    it('OpenStartPage', () =>{
+    cy.visit('/')
     })
 // Проверка редиректа на страницу с Dynamic ID
     it('redirectDynamicID', () =>{
-            cy.get('a[href="/dynamicid"]').eq(0).click()
+    cy.get('a[href="/dynamicid"]').eq(0).click()
         })
 // Проверка редиректа на стартовую страницу
     it('returnHomePage', () =>{
-            cy.get('a[href="/home"]').eq(0).click()
+    cy.get('a[href="/home"]').eq(0).click()
         })
       })
