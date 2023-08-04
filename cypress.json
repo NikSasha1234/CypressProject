@@ -1,0 +1,9 @@
+{
+  "baseUrl": "http://uitestingplayground.com",
+  "useRelativeSnapshots": true,
+  "ignoreTestFiles": ["*snapshots.js", "*mock.js"],
+  "chromeWebSecurity": false,
+  "watchForFileChanges": false,
+  "viewportWidth": 1280,
+  "viewportHeight": 720
+}
