@@ -1,5 +1,5 @@
 {
-  "baseUrl": "http://uitestingplayground.com",
+  "baseUrl": "https://automationintesting.online/",
   "useRelativeSnapshots": true,
   "ignoreTestFiles": ["*snapshots.js", "*mock.js"],
   "chromeWebSecurity": false,

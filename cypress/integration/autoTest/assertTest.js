@@ -1,13 +1,15 @@
 import {mockRequests} from './mock'
 
-context('Примеры использования различных видов проверок(asserts)', function () {
+context('Заполнение формы бронирования', function () {
 
     beforeEach(function () {
         mockRequests()
+
         cy.intercept('GET', '**/branding', {fixture: 'autoTest/branding.json'}).as('branding')
         cy.intercept('GET', '**/room', {fixture: 'autoTest/room.json'}).as('room')
         cy.intercept('POST', '**/message', {statusCode: 201, fixture: 'autoTest/message.json'}).as('message')
-cy.visit('/')
+
+        cy.visit('/')
 
     })
 
@@ -20,10 +22,11 @@ cy.visit('/')
         cy.get('[data-testid="ContactDescription"]').type('Booking from 29.12 to 09.01')
     }
 
-
-    it.only('shouldAnd', () => {
+    it('Проверка тела ответа', () => {
     fillForm()
+
      cy.contains('Submit').click()
+
      cy.wait('@message').should(xhr => {
                 expect(xhr.response.body).have.property('name', 'Ivanov Ivan')
                             expect(xhr.request.body).have.property('email', 'twoI@gmail.com')
